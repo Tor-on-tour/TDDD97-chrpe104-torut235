@@ -1,0 +1,220 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #a18eb7;
+}
+.middle{
+  width: 600px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#LS {
+  display: inline-block;
+  width: 340px;
+  height: 400px;
+
+  box-sizing: border-box;
+  border: 1px solid black;
+
+  margin-right: 10px;
+  float: left;
+
+}
+
+#L {
+  background-color: #634f6f;
+
+  display: inline-block;
+  width: 250px;
+  height: 100px;
+
+  box-sizing: border-box;
+  border: 1px solid black;
+
+  margin-bottom: 10px;
+  float: left;
+
+}
+
+#S {
+  background-color: #634f6f;
+
+  display: inline-block;
+  width: 250px;
+  height: 290px;
+
+  box-sizing: border-box;
+  border: 1px solid black;
+  float: left;
+
+}
+
+.formElement{
+height: 25px;
+
+}
+
+#signupButton, #loginButton{
+  float: right;
+}
+
+#signup{
+
+}
+
+h3{
+  height: 30px;
+  text-align: center;
+}
+#login{
+    padding-top: 11px;
+}
+
+input{
+  width: 160px;
+  float: right;
+}
+select{
+  float: right;
+  width: 160px;
+}
+
+
+/* Profile View */
+
+.header{
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.header ul{
+  list-style-type: none;
+  overflow: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  width: 306px;
+}
+
+.header li{
+  /*Text position*/
+  float: left;
+  text-align: center;
+  display: block;
+
+  /*Dimention*/
+  width: 100px;
+  height: 30px;
+  padding-top: 5px;
+
+  /*Color*/
+  border: 1px solid black;
+  background-color: #FEF1E0;
+}
+
+.header li a{
+  text-decoration: none;
+  color: #634f6f;
+}
+
+/*Panels */
+
+#fullPanel{
+  display: block;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+#changePw{
+  float: right;
+}
+#changePasswordElement{
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+  display: block;
+  width: 400px;
+  height: 150px;
+}
+
+.panel{
+
+  width: 800px;
+  height: 87%;
+
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  display: none; /*Assigning value property in script*/
+  background-color: whitesmoke;
+}
+
+/*addTextFunc = function(){
+  var textToAdd = document.getElementById('wallInputText').value;
+
+  console.log(textToAdd);
+  document.getElementById('wall').innerHTML += "<span>" + textToAdd + "</span></br></br></br>";
+  document.getElementById('textToAdd').style.marginBottom = '30px'
+}*/
+
+.air{
+  height: 60px;
+  width: 100%;
+}
+
+
+.personalSpaceElement{
+  border: 1px solid black;
+  float: left;
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 350px;
+  /*height: 110px;*/
+  overflow: auto;
+}
+
+#wallInputTextElement{
+  overflow: auto;
+}
+
+.wallInputText{
+  border: 1px solid black;
+  float: right;
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+  /*width: 350px;
+  height: 200px;*/
+  resize: none;
+}
+
+.wallInputTextElement p{
+  margin-left: 150px;
+  /*margin-right:;*/
+}
+
+.wallInputTextElement button {
+  float: right;
+}
+
+.wall{
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 110px;
+  border: 1px solid black;
+  height: auto;
+}
+
+.wall span{
+  margin-bottom: 30px;
+}
