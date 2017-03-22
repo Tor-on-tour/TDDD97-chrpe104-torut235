@@ -8,18 +8,20 @@ window.onload = function(){
    document.getElementById("clientviewer").innerHTML = view;
 };
 
-default_viewer = function(){
+default_viewer = function(e){
   welcomeview  = document.getElementById('welcomeview').innerHTML;
   profileview  = document.getElementById('profileview').innerHTML;
   displayView(welcomeview);
-  if(localStorage.getItem('token') === null || localStorage.getItem('token') === undefined || localStorage.getItem('token') === ''){
+  displayView(profileview);
+  if(localStorage.getItem('token') === null || undefined || ''){
     displayView(welcomeview);
     //console.log("Welcomeview: " + localStorage.getItem('token'));
     document.getElementById('signup').onsubmit=signUpChecker;
     document.getElementById('login').onsubmit=signInChecker;
   }
-  else if(localStorage.getItem('token') !== null || localStorage.getItem('token') !== undefined || localStorage.getItem('token') !== ''){
+  else if(localStorage.getItem('token') !== null || undefined || ''){
     displayView(profileview);
+    make_sign_in_socket(localStorage.getItem('token'));
     document.getElementById('headerHome').style.backgroundColor = 'pink'
     document.getElementById('headerBrowse').style.backgroundColor = '#FEF1E0'
     document.getElementById('headerAccount').style.backgroundColor = '#FEF1E0'
@@ -105,12 +107,6 @@ signInChecker = function(e){
 
   if(validated === true){
     localStorage.setItem('token', token);
-    make_sign_in_socket(token, function(response2){
-      //console.log("5 make_sign_in_socket i client.js");
-      //if(JSON.parse(response2)){
-        //signOutFunc();
-        //}
-      });
       //  signInChecker();
     default_viewer();
   }

@@ -1,0 +1,23 @@
+-- This file shall contain the SQL script used to initialize the database. database_helper.py or
+-- SQLite3 front-end will use this file to create all the tables and insert the default data. This file should be
+-- completed and executed before implementing and running any of the server side procedures.
+
+CREATE TABLE users
+    (token text ,
+    email text NOT NULL,
+    salt text NOT NULL,
+    hash text NOT NULL,
+    firstname text NOT NULL,
+    familyname text NOT NULL,
+    gender text NOT NULL,
+    city text NOT NULL,
+    country text NOT NULL
+    );
+
+CREATE TABLE messages
+    (msg_id text NOT NULL,
+    from_email NOT NULL,
+    to_email NOT NULL,
+    content text,
+    msg_timestamp text NOT NULL
+        );

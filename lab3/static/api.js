@@ -42,7 +42,7 @@ make_sign_in_socket = function(token){
   var connection = new WebSocket('ws://localhost:8003/get_sign_in_socket');
   // When the connection is open, send some data to the server
     connection.onopen = function () {
-      console.log("Hey there!")
+      console.log("Hey there! Mrs." + token);
       connection.send(token);
     };
   // Log errors
