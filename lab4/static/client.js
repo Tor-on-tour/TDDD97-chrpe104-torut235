@@ -253,7 +253,7 @@ addTextFuncHome = function(e){
             var keys = getSortedKeys(messages);
               for (var i=0; i<keys.length; i++){
                 var k = keys[i];
-                document.getElementById('wall-h').innerHTML += "<span></br>" + messages[k].from_email + " said : " + messages[k].content + "</span></br></br>";
+                document.getElementById('wall-h').innerHTML += "<span></br>" + messages[k].from_email + " said : " + "<div id='"+k+"' draggable = 'true' ondragstart = 'drag(event)'>" + messages[k].content + "</div></span></br></br>";
               }
           });
       }
@@ -277,7 +277,7 @@ addTextFuncBrowse = function(e){
               var keys = getSortedKeys(messages);
               for (var i=0; i<keys.length; i++){
                 var k = keys[i];
-                document.getElementById('wall-b').innerHTML += "<span></br>" + messages[k].from_email + " said : " + messages[k].content + "</span></br></br>";
+                document.getElementById('wall-b').innerHTML += "<span></br>" + messages[k].from_email + " said : " + "<div id='"+k+"' draggable = 'true' ondragstart = 'drag(event)'>" + messages[k].content + "</div></span></br></br>";
               }
             });
           }
@@ -293,8 +293,11 @@ refreshWall_h = function(){
     var response = JSON.parse(response);
     var messages = response.data;
     if(response.success === true){
-      for (key in messages){
-        document.getElementById('wall-h').innerHTML += "<span></br>" + messages[key].from_email + " said : " + messages[key].content + "</span></br></br>";
+      document.getElementById('wall-h').innerHTML = "<span></span>"
+      var keys = getSortedKeys(messages);
+      for (var i=0; i<keys.length; i++){
+        var k = keys[i];
+        document.getElementById('wall-h').innerHTML += "<span></br>" + messages[k].from_email + " said : " + "<div id='"+k+"' draggable = 'true' ondragstart = 'drag(event)'>" + messages[k].content + "</div></span></br></br>";
       }
     }
     else{
@@ -310,12 +313,29 @@ refreshWall_b = function(){
     var response = JSON.parse(response);
     var messages = response.data;
     if(response.success === true){
-      for (key in messages){
-        document.getElementById('wall-h').innerHTML += "<span></br>" + messages[key].from_email + " said : " + messages[key].content + "</span></br></br>";
+      document.getElementById('wall-b').innerHTML = "<span></span>"
+      var keys = getSortedKeys(messages);
+      for (var i=0; i<keys.length; i++){
+        var k = keys[i];
+        document.getElementById('wall-b').innerHTML += "<span></br>" + messages[k].from_email + " said : " + "<div id='"+k+"' draggable = 'true' ondragstart = 'drag(event)'>" + messages[k].content + "</div></span></br></br>";
       }
     }
     else{
       console.log(response.success);
     }
   });
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.value += document.getElementById(data).innerHTML;
 }

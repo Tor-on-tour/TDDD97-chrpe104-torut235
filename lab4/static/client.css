@@ -248,3 +248,6 @@ select{
 .wall span{
   margin-bottom: 30px;
 }
+.wall span div{
+  width: 100px;
+}

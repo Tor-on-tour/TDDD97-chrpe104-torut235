@@ -46,9 +46,9 @@
               </div>
 
               <div class="col-md-6 col-xs-12">
-                <form class="wallInputTextElement" id="wallInputTextElement-h">
+                <form class="wallInputTextElement" id="wallInputTextElement-h" >
                 <p>How was your day?</p>
-                <textarea class ="wallInputText" id="wallInputText-h"></textarea>
+                <textarea class ="wallInputText" id="wallInputText-h" ondrop="drop(event)" ondragover="allowDrop(event)" cols="40" rows="5"></textarea>
                 <button type="submit" id="wallTextButton-h">submit</button>
                 </form>
                 <button onclick="refreshWall_h()" id="refreshWall-h">refresh<button>
@@ -81,7 +81,7 @@
               <div class="col-md-4 col-xs-12">
                 <form class="wallInputTextElement" id="wallInputTextElement-b">
                   <p>How was your day?</p>
-                  <textarea class ="wallInputText" id="wallInputText-b" cols="40" rows="5"></textarea>
+                  <textarea class ="wallInputText" id="wallInputText-b" cols="40" rows="5" ondrop="drop(event)" ondragover="allowDrop(event)"></textarea>
                   <button type="submit" id="wallTextButton-b">submit</button>
                 </form>
                 <button onclick="refreshWall_b()" id="refreshWall-b">refresh</button>
